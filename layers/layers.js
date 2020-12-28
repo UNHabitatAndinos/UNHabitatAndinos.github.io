@@ -11,7 +11,7 @@ var lyr_RecoleccinderesiduosslidosHogares_0 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_RecoleccinderesiduosslidosHogares_0, 
                 style: style_RecoleccinderesiduosslidosHogares_0,
-                interactive: true,
+                interactive: false,
     title: 'Recolección de residuos sólidos (% Hogares)<br />\
     <img src="styles/legend/RecoleccinderesiduosslidosHogares_0_0.png" /> 1 - 38<br />\
     <img src="styles/legend/RecoleccinderesiduosslidosHogares_0_1.png" /> 38 - 67<br />\
@@ -30,7 +30,7 @@ var lyr_IPM_1 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_IPM_1, 
                 style: style_IPM_1,
-                interactive: true,
+                interactive: false,
     title: 'IPM %<br />\
     <img src="styles/legend/IPM_1_0.png" /> 0 - 8,2<br />\
     <img src="styles/legend/IPM_1_1.png" /> 8,2 - 20,3<br />\
@@ -49,7 +49,7 @@ var lyr_PoblacinnacidaenVenezuela_2 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_PoblacinnacidaenVenezuela_2, 
                 style: style_PoblacinnacidaenVenezuela_2,
-                interactive: true,
+                interactive: false,
     title: 'Población nacida en Venezuela (#)<br />\
     <img src="styles/legend/PoblacinnacidaenVenezuela_2_0.png" /> 1 - 4<br />\
     <img src="styles/legend/PoblacinnacidaenVenezuela_2_1.png" /> 4 - 13<br />\
@@ -68,7 +68,7 @@ var lyr_AccesibilidadalespaciopblicoabiertoDistanciaMts_3 = new ol.layer.Vector(
                 declutter: true,
                 source:jsonSource_AccesibilidadalespaciopblicoabiertoDistanciaMts_3, 
                 style: style_AccesibilidadalespaciopblicoabiertoDistanciaMts_3,
-                interactive: true,
+                interactive: false,
     title: 'Accesibilidad al espacio público abierto (Distancia Mts)<br />\
     <img src="styles/legend/AccesibilidadalespaciopblicoabiertoDistanciaMts_3_0.png" /> 1- 400<br />\
     <img src="styles/legend/AccesibilidadalespaciopblicoabiertoDistanciaMts_3_1.png" /> 401 - 1955<br />'
@@ -84,7 +84,7 @@ var lyr_UsosdelSuelo_4 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_UsosdelSuelo_4, 
                 style: style_UsosdelSuelo_4,
-                interactive: true,
+                interactive: false,
     title: 'Usos del Suelo<br />\
     <img src="styles/legend/UsosdelSuelo_4_0.png" /> Actividad Central<br />\
     <img src="styles/legend/UsosdelSuelo_4_1.png" /> Actividad Comercial<br />\
@@ -107,7 +107,7 @@ var lyr_AccesoainternetHogares_5 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_AccesoainternetHogares_5, 
                 style: style_AccesoainternetHogares_5,
-                interactive: true,
+                interactive: false,
     title: 'Acceso a internet (% Hogares)<br />\
     <img src="styles/legend/AccesoainternetHogares_5_0.png" /> 1- 21<br />\
     <img src="styles/legend/AccesoainternetHogares_5_1.png" /> 22 - 43<br />\
@@ -126,7 +126,7 @@ var lyr_ProximidadaequipamientosdeeducacinDistanciaenKm_6 = new ol.layer.Vector(
                 declutter: true,
                 source:jsonSource_ProximidadaequipamientosdeeducacinDistanciaenKm_6, 
                 style: style_ProximidadaequipamientosdeeducacinDistanciaenKm_6,
-                interactive: true,
+                interactive: false,
     title: 'Proximidad a equipamientos de educación (Distancia en Km)<br />\
     <img src="styles/legend/ProximidadaequipamientosdeeducacinDistanciaenKm_6_0.png" /> 0 - 0,2<br />\
     <img src="styles/legend/ProximidadaequipamientosdeeducacinDistanciaenKm_6_1.png" /> 0,2 - 0,4<br />\
@@ -145,7 +145,7 @@ var lyr_ProximidadaequipamientosdesaludDistanciaenKm_7 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_ProximidadaequipamientosdesaludDistanciaenKm_7, 
                 style: style_ProximidadaequipamientosdesaludDistanciaenKm_7,
-                interactive: true,
+                interactive: false,
     title: 'Proximidad a equipamientos de salud (Distancia en Km)<br />\
     <img src="styles/legend/ProximidadaequipamientosdesaludDistanciaenKm_7_0.png" /> 0,1 - 0,3<br />\
     <img src="styles/legend/ProximidadaequipamientosdesaludDistanciaenKm_7_1.png" /> 0,3 - 0,7<br />\
@@ -164,7 +164,7 @@ var lyr_Densidadpoblacional_8 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_Densidadpoblacional_8, 
                 style: style_Densidadpoblacional_8,
-                interactive: true,
+                interactive: false,
     title: 'Densidad poblacional <br />\
     <img src="styles/legend/Densidadpoblacional_8_0.png" /> 0 - 0,03<br />\
     <img src="styles/legend/Densidadpoblacional_8_1.png" /> 0,04 - 0,05<br />\
@@ -183,7 +183,7 @@ var lyr_AccesoaelectricidadHogares_9 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_AccesoaelectricidadHogares_9, 
                 style: style_AccesoaelectricidadHogares_9,
-                interactive: true,
+                interactive: false,
     title: 'Acceso a electricidad (% Hogares)<br />\
     <img src="styles/legend/AccesoaelectricidadHogares_9_0.png" /> 24 - 35<br />\
     <img src="styles/legend/AccesoaelectricidadHogares_9_1.png" /> 36 - 68<br />\
@@ -202,7 +202,7 @@ var lyr_AccesoasaneamientoadecuadoHogares_10 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_AccesoasaneamientoadecuadoHogares_10, 
                 style: style_AccesoasaneamientoadecuadoHogares_10,
-                interactive: true,
+                interactive: false,
     title: 'Acceso a saneamiento adecuado (% Hogares)<br />\
     <img src="styles/legend/AccesoasaneamientoadecuadoHogares_10_0.png" /> 0 - 38<br />\
     <img src="styles/legend/AccesoasaneamientoadecuadoHogares_10_1.png" /> 39 - 53,1<br />\
@@ -221,7 +221,7 @@ var lyr_HacinamientoHogares_11 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_HacinamientoHogares_11, 
                 style: style_HacinamientoHogares_11,
-                interactive: true,
+                interactive: false,
     title: 'Hacinamiento (% Hogares)<br />\
     <img src="styles/legend/HacinamientoHogares_11_0.png" /> 0 - 17<br />\
     <img src="styles/legend/HacinamientoHogares_11_1.png" /> 18 - 31<br />\
@@ -240,7 +240,7 @@ var lyr_AguamejoradaHogares_12 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_AguamejoradaHogares_12, 
                 style: style_AguamejoradaHogares_12,
-                interactive: true,
+                interactive: false,
     title: 'Agua mejorada (% Hogares)<br />\
     <img src="styles/legend/AguamejoradaHogares_12_0.png" /> 4 - 45<br />\
     <img src="styles/legend/AguamejoradaHogares_12_1.png" /> 46 - 73<br />\
@@ -259,7 +259,7 @@ var lyr_ViviendaadecuadaHogares_13 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_ViviendaadecuadaHogares_13, 
                 style: style_ViviendaadecuadaHogares_13,
-                interactive: true,
+                interactive: false,
     title: 'Vivienda adecuada (% Hogares)<br />\
     <img src="styles/legend/ViviendaadecuadaHogares_13_0.png" /> 0 - 38<br />\
     <img src="styles/legend/ViviendaadecuadaHogares_13_1.png" /> 39 - 69<br />\
@@ -278,7 +278,7 @@ var lyr_Remocinenmasa_14 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_Remocinenmasa_14, 
                 style: style_Remocinenmasa_14,
-                interactive: true,
+                interactive: false,
     title: 'Remoción en masa<br />\
     <img src="styles/legend/Remocinenmasa_14_0.png" /> Alta<br />\
     <img src="styles/legend/Remocinenmasa_14_1.png" /> Muy Alta<br />'
@@ -294,7 +294,7 @@ var lyr_Zonasinundadas_15 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_Zonasinundadas_15, 
                 style: style_Zonasinundadas_15,
-                interactive: true,
+                interactive: false,
     title: 'Zonas inundadas <br />\
     <img src="styles/legend/Zonasinundadas_15_0.png" /> INUNDACION 2010-2011<br />\
     <img src="styles/legend/Zonasinundadas_15_1.png" /> INUNDABLE<br />'
@@ -310,7 +310,7 @@ var lyr_LocalidadesBarranquilla_16 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_LocalidadesBarranquilla_16, 
                 style: style_LocalidadesBarranquilla_16,
-                interactive: true,
+                interactive: false,
                 title: '<img src="styles/legend/LocalidadesBarranquilla_16.png" /> Localidades Barranquilla'
             });
 
@@ -344,7 +344,7 @@ var group_SOSTENIBILIDADAMBIENTAL = new ol.layer.Group({
                                 layers: [lyr_RecoleccinderesiduosslidosHogares_0,],
                                 title: "SOSTENIBILIDAD AMBIENTAL"});
 
-lyr_RecoleccinderesiduosslidosHogares_0.setVisible(true);lyr_IPM_1.setVisible(true);lyr_PoblacinnacidaenVenezuela_2.setVisible(true);lyr_AccesibilidadalespaciopblicoabiertoDistanciaMts_3.setVisible(true);lyr_UsosdelSuelo_4.setVisible(true);lyr_AccesoainternetHogares_5.setVisible(true);lyr_ProximidadaequipamientosdeeducacinDistanciaenKm_6.setVisible(true);lyr_ProximidadaequipamientosdesaludDistanciaenKm_7.setVisible(true);lyr_Densidadpoblacional_8.setVisible(true);lyr_AccesoaelectricidadHogares_9.setVisible(true);lyr_AccesoasaneamientoadecuadoHogares_10.setVisible(true);lyr_HacinamientoHogares_11.setVisible(true);lyr_AguamejoradaHogares_12.setVisible(true);lyr_ViviendaadecuadaHogares_13.setVisible(true);lyr_Remocinenmasa_14.setVisible(true);lyr_Zonasinundadas_15.setVisible(true);lyr_LocalidadesBarranquilla_16.setVisible(true);lyr_Mapabase_17.setVisible(true);
+lyr_RecoleccinderesiduosslidosHogares_0.setVisible(false);lyr_IPM_1.setVisible(false);lyr_PoblacinnacidaenVenezuela_2.setVisible(false);lyr_AccesibilidadalespaciopblicoabiertoDistanciaMts_3.setVisible(false);lyr_UsosdelSuelo_4.setVisible(false);lyr_AccesoainternetHogares_5.setVisible(false);lyr_ProximidadaequipamientosdeeducacinDistanciaenKm_6.setVisible(false);lyr_ProximidadaequipamientosdesaludDistanciaenKm_7.setVisible(false);lyr_Densidadpoblacional_8.setVisible(false);lyr_AccesoaelectricidadHogares_9.setVisible(false);lyr_AccesoasaneamientoadecuadoHogares_10.setVisible(false);lyr_HacinamientoHogares_11.setVisible(false);lyr_AguamejoradaHogares_12.setVisible(false);lyr_ViviendaadecuadaHogares_13.setVisible(false);lyr_Remocinenmasa_14.setVisible(false);lyr_Zonasinundadas_15.setVisible(false);lyr_LocalidadesBarranquilla_16.setVisible(true);lyr_Mapabase_17.setVisible(true);
 var layersList = [group_SOSTENIBILIDADAMBIENTAL,group_CALIDADDEVIDA,group_EQUIDADEINCLUSINSOCIAL,group_INFRAESTRUCTURAYDESARROLLO,group_AMENAZARIESGO,group_CONVENCIONES,lyr_Mapabase_17];
 lyr_RecoleccinderesiduosslidosHogares_0.set('fieldAliases', {'cod_dane': 'cod_dane', 'FID_1': 'FID_1', 'cod_dane_1': 'cod_dane_1', 'cod_dane_2': 'cod_dane_2', 'T_VIV': 'T_VIV', 'PA_ADE': 'PA_ADE', 'PA_INA': 'PA_INA', 'PI_ADE': 'PI_ADE', 'PI_INA': 'PI_INA', 'T_SI_ENERG': 'T_SI_ENERG', 'P_ENERGIA': 'P_ENERGIA', 'T_SI_ACU': 'T_SI_ACU', 'P_ACU': 'P_ACU', 'T_SI_ALC': 'T_SI_ALC', 'P_ALC': 'P_ALC', 'T_SI_RECO': 'T_SI_RECO', 'P_RECOL': 'P_RECOL', 'T_SI_INTER': 'T_SI_INTER', 'P_INTER': 'P_INTER', 'P_NO_SAN': 'P_NO_SAN', 'P_HACI': 'P_HACI', 'P_V_ADE': 'P_V_ADE', 'VEN': 'VEN', 'P_VEN': 'P_VEN', 'E_PUB': 'E_PUB', 'EDU': 'EDU', 'SALUD': 'SALUD', 'IPM': 'IPM', 'HOGARES': 'HOGARES', 'T_PER': 'T_PER', 'Enestemuni': 'Enestemuni', 'Enotromuni': 'Enotromuni', 'Enotropais': 'Enotropais', 'Noinforma': 'Noinforma', 'AREA': 'AREA', 'DEN_POBLA': 'DEN_POBLA', 'T_NO_ALC': 'T_NO_ALC', });
 lyr_IPM_1.set('fieldAliases', {'cod_dane': 'cod_dane', 'FID_1': 'FID_1', 'cod_dane_1': 'cod_dane_1', 'cod_dane_2': 'cod_dane_2', 'T_VIV': 'T_VIV', 'PA_ADE': 'PA_ADE', 'PA_INA': 'PA_INA', 'PI_ADE': 'PI_ADE', 'PI_INA': 'PI_INA', 'T_SI_ENERG': 'T_SI_ENERG', 'P_ENERGIA': 'P_ENERGIA', 'T_SI_ACU': 'T_SI_ACU', 'P_ACU': 'P_ACU', 'T_SI_ALC': 'T_SI_ALC', 'P_ALC': 'P_ALC', 'T_SI_RECO': 'T_SI_RECO', 'P_RECOL': 'P_RECOL', 'T_SI_INTER': 'T_SI_INTER', 'P_INTER': 'P_INTER', 'P_NO_SAN': 'P_NO_SAN', 'P_HACI': 'P_HACI', 'P_V_ADE': 'P_V_ADE', 'VEN': 'VEN', 'P_VEN': 'P_VEN', 'E_PUB': 'E_PUB', 'EDU': 'EDU', 'SALUD': 'SALUD', 'IPM': 'IPM', 'HOGARES': 'HOGARES', 'T_PER': 'T_PER', 'Enestemuni': 'Enestemuni', 'Enotromuni': 'Enotromuni', 'Enotropais': 'Enotropais', 'Noinforma': 'Noinforma', 'AREA': 'AREA', 'DEN_POBLA': 'DEN_POBLA', 'T_NO_ALC': 'T_NO_ALC', });

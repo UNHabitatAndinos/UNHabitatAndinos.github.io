@@ -22,35 +22,35 @@ var style_HacinamientoHogares_11 = function(feature, resolution){
     }
     if (value >= 0.000000 && value <= 17.000000) {
             style = [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(224,224,224,1.0)'}),
+        fill: new ol.style.Fill({color: 'rgba(232,232,232,1.0)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
     })]
                     } else if (value >= 17.000000 && value <= 31.000000) {
             style = [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(168,196,198,1.0)'}),
+        fill: new ol.style.Fill({color: 'rgba(194,213,215,1.0)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
     })]
                     } else if (value >= 31.000000 && value <= 47.000000) {
             style = [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(112,168,172,1.0)'}),
+        fill: new ol.style.Fill({color: 'rgba(184,207,209,1.0)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
     })]
                     } else if (value >= 47.000000 && value <= 76.000000) {
             style = [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(56,140,146,1.0)'}),
+        fill: new ol.style.Fill({color: 'rgba(116,174,179,1.0)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
     })]
                     } else if (value >= 76.000000 && value <= 100.000000) {
             style = [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(0,112,120,1.0)'}),
+        fill: new ol.style.Fill({color: 'rgba(77,155,161,1.0)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
