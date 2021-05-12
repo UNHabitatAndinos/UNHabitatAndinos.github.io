@@ -876,7 +876,7 @@ function setProColor(d) {
                     '#1a9641';
     }
     else {
-        return d > 3 ? '#d7191c' :
+        return d > 5 ? '#d7191c' :
                 d > 2 ? '#f4f466' :
                     d > 1 ? '#a6d96a' :
                         '#1a9641';
