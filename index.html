@@ -106,7 +106,7 @@
 
         .info {
             padding: 16px 10px;
-            font: 12px/13px Segoe UI, Segoe UI, Segoe UI;
+            font: 11px/12px Segoe UI, Segoe UI, Segoe UI;
             background: white;
             background: rgba(255, 255, 255, 0.8);
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -130,47 +130,74 @@
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
 <script src="data/Manzana.js"></script>
+<script src="data/localidad.js"></script>
 
 <div id="map">
     <div id='legend'>
     </div>
     <script src='src/map.js'></script>
-    
+
     <div class="container">
         <b>Seleccione indicador:</b>
         <div class="custom-select">
         <select name="layers" onclick= 'changeIndi(this);'>
-            <option id="D_POB" value="D_POB">Densidad residencial</option>
-            <option id="ZA_SALUD1" value="ZA_SALUD1">Proximidad equipamientos de salud</option>
-            <option id="PM10" value="PM10">Concentración de Pm10</option>
-            <option id="ZA_EDU1" value="ZA_EDU1">Proximidad equipamientos de educación</option>
-            <option id="ZA_BIB_MU1" value="ZA_BIB_MU1">Proximidad equipamientos culturales</option>
-            <option id="DES_RANGO" value="DES_RANGO">Edad probable de un habitante</option>
-            <option id="ESC_ANOS" value="ESC_ANOS">Años promedio educación</option>
-            <option id="MIXTICIDAD" value="MIXTICIDAD">Diversidad usos del suelo</option>
-            <option id="ZA_EPUBLI1" value="ZA_EPUBLI1">Proximidad espacio público</option>   
-            <option id="P_MAT_ADE" value="P_MAT_ADE">Vivienda adecuada</option>
+            <option id="VEN" value="VEN">Población de origen Venezuela</option>  
+            <optgroup label="Vivienda"></optgroup>
+            <option id="VIV_ADE" value="VIV_ADE">Vivienda adecuada</option>
+            <option id="ES_VIT_SUF" value="ES_VIT_SUF">Espacio vital suficiente</option>
             <option id="A_ACU" value="A_ACU">Acceso a agua mejorada</option>
             <option id="A_ALC" value="A_ALC">Acceso a saneamiento</option>   
+            <option id="A_ELEC" value="A_ELEC">Acceso a electricidad</option> 
             <option id="A_INTER" value="A_INTER">Acceso a internet</option>
+            <option id="D_ECONO" value="D_ECONO">Dependencia económica</option>
             <option id="MAX_EST" value="MAX_EST">Estratificación socioeconómica</option>
-            <option id="T_DESEMP" value="T_DESEMP">Tasa de desempleo</option>
-            <option id="DESEM_JUVE" value="DESEM_JUVE">Desempleo juvenil</option>   
-            <option id="MIX_ETNIA" value="MIX_ETNIA">Diversidad etnias y razas</option> 
-            <option id="MIX_EDU" value="MIX_EDU">Diversidad nivel educativo</option>  
-            <option id="MIX_EDAD" value="MIX_EDAD">Diversidad edades</option> 
+            </optgroup>
+            <optgroup label="Salud"></optgroup>
+            <option id="P_SALUD" value="P_SALUD">Proximidad centros salud</option>
+            <option id="P_SALUD1" value="P_SALUD1">Proximidad hospitales</option>
+            <option id="PM10" value="PM10">Concentración de Pm10</option>
+            <option id="CON_SOL" value="CON_SOL">Contaminación de residuos sólidos</option>
+            <option id="E_VIDA" value="E_VIDA">Esperanza de vida al nacer</option>
+            <option id="B_E_VIDA" value="B_E_VIDA">Brecha de género esperanza de vida al nacer</option>
+            </optgroup>
+            <optgroup label="Educación, cultura y diversidad"></optgroup>
+            <option id="P_BIB" value="P_BIB">Proximidad equipamientos culturales</option>
+            <option id="P_EDU" value="P_EDU">Proximidad equipamientos educativos</option>
             <option id="SHANON_ES" value="SHANON_ES">Diversidad ingresos</option> 
-            <option id="VEN" value="VEN">Población de origen Venezuela</option>    
+            <option id="MIX_EDU" value="MIX_EDU">Diversidad nivel educativo</option> 
+            <option id="MIX_EDAD" value="MIX_EDAD">Diversidad edades</option> 
+            <option id="MIX_ETNIA" value="MIX_ETNIA">Diversidad etnias y razas</option> 
+            <option id="DIF_M_H" value="DIF_M_H">Brecha de género años promedio educación</option>
+            <option id="ESC_ANOS" value="ESC_ANOS">Años promedio educación</option>
+            </optgroup>
+            <optgroup label="Espacios públicos, seguridad, recreación"></optgroup>
+            <option id="P_EP" value="P_EP">Proximidad espacio público</option>  
+            <option id="M2_ESP_PU" value="M2_ESP_PU">M² per capita de espacio público</option> 
+            <option id="D_POB" value="D_POB" selected>Densidad residencial</option>
+            <option id="MIXTICIDAD" value="MIXTICIDAD">Diversidad usos del suelo</option>
+            </optgroup>
+            <optgroup label="Oportunidades económicas"></optgroup>
+            <option id="P_COMSER" value="P_COMSER">Proximidad unidades de servicios y comerciales</option>
+            <option id="T_DESEMP" value="T_DESEMP">Tasa de desempleo</option>
+            <option id="EMPLEO" value="EMPLEO">Empleo</option>
+            <option id="DESEM_JUVE" value="DESEM_JUVE">Desempleo juvenil</option>   
+            <option id="DESEM_M_H" value="DESEM_M_H">Brecha de género desempleo</option>
+            </optgroup>          
         </select>
     </div>
+    </div>
+
+    <div id="logoContainer">
+        <img src="images/logo1.png" width="100%">
     </div>
     
     <div id="logoContainer">
         <img src="images/logo1.png" width="100%">
     </div>
-    
+
 </div>
 
 
 </body>
 </html>
+
