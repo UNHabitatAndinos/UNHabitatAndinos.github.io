@@ -152,7 +152,7 @@ function changeLegend(props) {
     var _legend = document.getElementById('legend'); // create a div with a class "info"
     _legend.innerHTML = (props ?
         `<p style="font-size: 11px"><strong>${props.title}</strong></p>
-            <p style="font-size: 10px">${props.subtitle}</p>
+            <p>${props.subtitle}</p>
             <p id='colors'>
                 ${props.elem1}
                 ${props.elem2}
@@ -220,7 +220,7 @@ var legends = {
     },
     MIXTICIDAD: {
         title: "Diversidad usos del suelo",
-        subtitle: "Índice de Shanon",
+        subtitle: "Índice de Shanon -  Nivel de diversidad por manzana", 
         elem1: '<div><span  style= "color:#1a9641">▉</span>1.06 - 1.67</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>0.79 - 1.05</div>',
         elem3: '<div><span  style= "color:#f4f466">▉</span>0.54 - 0.78</div>',
@@ -228,7 +228,7 @@ var legends = {
         elem5: '<div><span  style= "color:#d7191c">▉</span>0.00 - 0.29</div>',
         elem6: '',
         elem7: '',
-        elem8: "Plan de Ordenamiento Territorial Cúcuta",
+        elem8: "Alcalcía de Barranquilla",
     },
     ZA_EPUBLI1: {
         title: "Proximidad espacio público",
@@ -280,7 +280,7 @@ var legends = {
     },  
     DESEM_JUVE: {
         title: "Desempleo juvenil",
-        subtitle: "% de Personas",
+        subtitle: "% de Personas entre 15 y 24 años",
         elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 4</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>5 - 11</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>12 - 20</div>',
@@ -324,11 +324,11 @@ var legends = {
         elem5: '<div><span  style= "color:#d7191c">▉</span>46 - 47</div>',
         elem6: '',
         elem7: '',
-        elem8: "CORPONOR",
+        elem8: "Alcaldía de Barranquilla",
     },
     VEN: {
         title: "Población de origen Venezuela",
-        subtitle: "% Personas",
+        subtitle: "Personas",
         elem1: '<div><span  style= "color:#1a9641">▉</span>1 - 5</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>6 - 25</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>26 - 77</div>',
@@ -352,7 +352,7 @@ var legends = {
     },
     MIX_ETNIA: {
         title: "Diversidad etnias y razas",
-        subtitle: "Índice de Shanon", 
+        subtitle: "Índice de Shanon -  Nivel de diversidad por manzana", 
         elem1: '<div><span  style= "color:#1a9641">▉</span>0.25 - 0.50</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>0.15 - 0.24</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>0.09 - 0.14</div>',
@@ -364,7 +364,7 @@ var legends = {
     },
     MIX_EDU: {
         title: "Diversidad nivel educativo",
-        subtitle: "Índice de Shanon", 
+        subtitle: "Índice de Shanon -  Nivel de diversidad por manzana", 
         elem1: '<div><span  style= "color:#1a9641">▉</span>1.56 - 1.98</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>1.34 - 1.55</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>1.08 - 1.33</div>',
@@ -376,7 +376,7 @@ var legends = {
     },
     MIX_EDAD: {
         title: "Diversidad edades",
-        subtitle: "Índice de Shanon", 
+        subtitle: "Índice de Shanon -  Nivel de diversidad por manzana", 
         elem1: '<div><span  style= "color:#1a9641">▉</span>1.54 - 1.74</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>1.45 - 1.53</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>1.34 - 1.44</div>',
@@ -388,7 +388,7 @@ var legends = {
     },
     SHANON_ES: {
         title: "Diversidad ingresos",
-        subtitle: "Índice de Shanon", 
+        subtitle: "Índice de Shanon -  Nivel de diversidad por manzana", 
         elem1: '<div><span  style= "color:#1a9641">▉</span>0.78 - 1.52</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>0.55 - 0.77</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>0.34 - 0.54</div>',
@@ -418,7 +418,7 @@ var legends = {
         elem3: '<div><span  style= "color:#f4f466">▉</span>1001 - 1500</div>',
         elem4: '<div><span  style= "color:#fdae61">▉</span>1501 - 3000</div>',
         elem5: '<div><span  style= "color:#d7191c">▉</span>3001 - 5492</div>',
-        elem6: '',
+        elem6: '<br />Factor de inclinación del terreno <br />A nivel: 1<br /> Ligeramente inclinada: 1.25<br /> Moderadamente inclinada: 1.5<br /> Fuertemente inclinada: 1.75<br /> Escarpada: 2<br />',
         elem7: '',
         elem8: "Alcaldía de Barranquilla",
     },
@@ -430,7 +430,7 @@ var legends = {
         elem3: '<div><span  style= "color:#f4f466">▉</span>2001 - 4000</div>',
         elem4: '<div><span  style= "color:#fdae61">▉</span>4001 - 8000</div>',
         elem5: '<div><span  style= "color:#d7191c">▉</span>5001 - 12745</div>',
-        elem6: '',
+        elem6: '<br />Factor de inclinación del terreno <br />A nivel: 1<br /> Ligeramente inclinada: 1.25<br /> Moderadamente inclinada: 1.5<br /> Fuertemente inclinada: 1.75<br /> Escarpada: 2<br />',
         elem7: '',
         elem8: "Alcaldía de Barranquilla",
     },
@@ -508,7 +508,7 @@ var legends = {
     },
     B_E_VIDA: {
         title: "Brecha género esperanza de vida al nacer",
-        subtitle: "",
+        subtitle: "Relación esperanza de vida al nacer de mujeres y hombres",
         elem1: '<div><span  style= "color:#1a9641">▉</span>0.83 - 0.98</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>0.99 - 1.03</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>1.04 - 1.07</div>',
@@ -526,7 +526,7 @@ var legends = {
         elem3: '<div><span  style= "color:#f4f466">▉</span>1001 - 3000</div>',
         elem4: '<div><span  style= "color:#fdae61">▉</span>3001 - 5000</div>',
         elem5: '<div><span  style= "color:#d7191c">▉</span>5001 - 11196</div>',
-        elem6: '',
+        elem6: '<br />Factor de inclinación del terreno <br />A nivel: 1<br /> Ligeramente inclinada: 1.25<br /> Moderadamente inclinada: 1.5<br /> Fuertemente inclinada: 1.75<br /> Escarpada: 2<br />',
         elem7: '',
         elem8: "Alcaldía de Barranquilla",
     },
@@ -538,13 +538,13 @@ var legends = {
         elem3: '<div><span  style= "color:#f4f466">▉</span>501 - 1000</div>',
         elem4: '<div><span  style= "color:#fdae61">▉</span>1001 - 1500</div>',
         elem5: '<div><span  style= "color:#d7191c">▉</span>1501 - 3108</div>',
-        elem6: '',
+        elem6: '<br />Factor de inclinación del terreno <br />A nivel: 1<br /> Ligeramente inclinada: 1.25<br /> Moderadamente inclinada: 1.5<br /> Fuertemente inclinada: 1.75<br /> Escarpada: 2<br />',
         elem7: '',
         elem8: "Alcaldía de Barranquilla",
     },
     DIF_M_H: {
-        title: "Brecha género años promedio<br> educación",
-        subtitle: "", 
+        title: "Brecha género años promedio educación",
+        subtitle: "Relación años promedio educación de mujeres y hombres", 
         elem1: '<div><span  style= "color:#1a9641">▉</span>0.00 - 1.01</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>1.02 - 1.30</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>1.31 - 1.84</div>',
@@ -556,19 +556,19 @@ var legends = {
     },
     P_EP: {
         title: "Proximidad espacio público",
-        subtitle: "", 
+        subtitle: "Distancia en m x Factor inclinación del terreno", 
         elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 100</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>101 - 300</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>301 - 500</div>',
         elem4: '<div><span  style= "color:#fdae61">▉</span>501 - 800</div>',
         elem5: '<div><span  style= "color:#d7191c">▉</span>801 - 1955</div>',
-        elem6: '',
+        elem6: '<br />Factor de inclinación del terreno <br />A nivel: 1<br /> Ligeramente inclinada: 1.25<br /> Moderadamente inclinada: 1.5<br /> Fuertemente inclinada: 1.75<br /> Escarpada: 2<br />',
         elem7: '',
         elem8: "Alcaldía de Barranquilla",
     },
     M2_ESP_PU: {
         title: "M² per capita de espacio público",
-        subtitle: "M² per capita",
+        subtitle: "m²/habitante",
         elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 3</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>4 - 9</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>10 - 43</div>',
@@ -580,13 +580,13 @@ var legends = {
     },
     P_COMSER: {
         title: "Proximidad unidades de servicios y comerciales",
-        subtitle: "Distancia m",
+        subtitle: "Distancia en m x Factor inclinación del terreno",
         elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 50</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>51 - 200</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>201 - 500</div>',
         elem4: '<div><span  style= "color:#fdae61">▉</span>501 - 1000</div>',
         elem5: '<div><span  style= "color:#d7191c">▉</span>1001 - 1534</div>',
-        elem6: '',
+        elem6: '<br />Factor de inclinación del terreno <br />A nivel: 1<br /> Ligeramente inclinada: 1.25<br /> Moderadamente inclinada: 1.5<br /> Fuertemente inclinada: 1.75<br /> Escarpada: 2<br />',
         elem7: '',
         elem8: "Alcaldía de Barranquilla",
     },
@@ -604,7 +604,7 @@ var legends = {
     },
     DESEM_M_H: {
         title: "Brecha de género desempleo",
-        subtitle: "",
+        subtitle: "Relación desempleo de mujeres y hombres",
         elem1: '<div><span  style= "color:#1a9641">▉</span>0.00 - 0.31</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>0.32 - 0.84</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>0.85 - 1.62</div>',
