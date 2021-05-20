@@ -569,11 +569,11 @@ var legends = {
     M2_ESP_PU: {
         title: "M² per capita de espacio público",
         subtitle: "m²/habitante",
-        elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 3</div>',
-        elem2: '<div><span  style= "color:#a6d96a">▉</span>4 - 9</div>', 
+        elem1: '<div><span  style= "color:#1a9641">▉</span>101 - 564</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>44 - 100</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>10 - 43</div>',
-        elem4: '<div><span  style= "color:#fdae61">▉</span>44 - 100</div>',
-        elem5: '<div><span  style= "color:#d7191c">▉</span>101 - 564</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>4 - 9</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>0 - 3</div>',
         elem6: '',
         elem7: '',
         elem8: "Alcaldía de Barranquilla",
@@ -848,11 +848,11 @@ function setProColor(d) {
                     '#1a9641';
     }
     else if (currentStyle === 'M2_ESP_PU') {
-        return d > 100 ? '#d7191c' :
-            d > 43 ? '#fdae61' :
+        return d > 100 ? '#1a9641' :
+            d > 43 ? '#a6d96a' :
                 d > 9 ? '#f4f466' :
-                    d > 3 ? '#a6d96a' :
-                    '#1a9641';
+                    d > 3 ? '#fdae61':
+                    '#d7191c';
     }
     else if (currentStyle === 'P_COMSER') {
         return d > 1000 ? '#d7191c' :
