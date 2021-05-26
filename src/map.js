@@ -76,12 +76,15 @@ info.update = function (props) {
         'Proximidad espacio público: ' + props.P_EP.toFixed(0) + ' m' + '<br />' +
         'M² per capita de espacio público: ' + props.M2_ESP_PU.toFixed(2) + '<br />' +
         'Densidad poblacional: ' + props.D_POB.toFixed(2) + '<br />' +
+        'Tasa de hurtos x 100mil habitantes: ' + props.HURTOS.toFixed(1) + '<br />' +
+        'Tasa de homicidios x 100mil habitantes: ' + props.HOMICIDIOS.toFixed(1) + '<br />' +
         'Diversidad usos del suelo: ' + props.MIXTICIDAD.toFixed(2) + '/1.61' +'<br />' + '<br />' +
 
         '<b>Oportunidades económicas </b>' + '<br />' +
         'Proximidad unidades servicios y comerciales: ' + props.P_COMSER.toFixed(0) + ' m' + '<br />' +
         'Desempleo: ' + props.T_DESEMP.toFixed(0) + ' %' + '<br />' +
         'Empleo: ' + props.EMPLEO.toFixed(0) + ' %' + '<br />' +
+        'Empleo informal estricto: ' + props.E_INFOR.toFixed(0) + ' %' + '<br />' +
         'Desempleo juvenil: ' + props.DESEM_JUVE.toFixed(0) + ' %' + '<br />' +
         'Brecha género desempleo: ' + props.DESEM_M_H.toFixed(2)  : 'Seleccione una manzana');
 };
@@ -614,6 +617,42 @@ var legends = {
         elem7: '',
         elem8: "DANE Censo Nacional Población y Vivienda 2018",
     },
+    HOMICIDIOS: {
+        title: "Tasa de homicidios",
+        subtitle: "Homicidios x 100mil habitantes",
+        elem1: '<div><span  style= "color:#1a9641">▉</span>11.3</div>',
+        elem2: 'Tasa de la ciudad de Barranquilla', 
+        elem3: '',
+        elem4: '',
+        elem5: '',
+        elem6: '',
+        elem7: '',
+        elem8: "Instituto Nacional de Medicina Legal y Ciencias Forences",
+    },
+    HURTOS: {
+        title: "Tasa de hurtos",
+        subtitle: "Hurtos x 100mil habitantes",
+        elem1: '<div><span  style= "color:#1a9641">▉</span>25.1</div>',
+        elem2: 'Tasa de la ciudad de Barranquilla', 
+        elem3: '',
+        elem4: '',
+        elem5: '',
+        elem6: '',
+        elem7: '',
+        elem8: "Instituto Nacional de Medicina Legal y Ciencias Forences",
+    },
+    E_INFOR: {
+        title: "Empleo informal estricto",
+        subtitle: "% Personas",
+        elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 2</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>3 - 8</div>', 
+        elem3: '<div><span  style= "color:#f4f466">▉</span>9 - 20</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>21 - 46</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>47 - 90</div>',
+        elem6: '',
+        elem7: '',
+        elem8: "DANE Censo Nacional Población y Vivienda 2018",
+    },
 }
 
 var indi = L.geoJson(Manzana, {
@@ -875,8 +914,15 @@ function setProColor(d) {
                     d > 0.31 ? '#a6d96a' :
                     '#1a9641';
     }
+    else if (currentStyle === 'E_INFOR') {
+        return d > 46 ? '#d7191c' :
+        d > 20 ? '#fdae61' :
+            d > 8 ? '#f4f466' :
+                d > 2 ? '#a6d96a':
+                '#1a9641';
+}
     else {
-        return d > 3 ? '#d7191c' :
+        return d > 3 ? '#1a9641' :
                 d > 2 ? '#f4f466' :
                     d > 1 ? '#a6d96a' :
                         '#1a9641';
