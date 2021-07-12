@@ -223,7 +223,7 @@ var legends = {
     },
     MIXTICIDAD: {
         title: "Diversidad usos del suelo",
-        subtitle: "Índice de Shanon -  Nivel de diversidad por manzana", 
+        subtitle: "Índice de Shannon-Wienner -  Nivel de diversidad por manzana",
         elem1: '<div><span  style= "color:#1a9641">▉</span>1.06 - 1.67</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>0.79 - 1.05</div>',
         elem3: '<div><span  style= "color:#f4f466">▉</span>0.54 - 0.78</div>',
@@ -355,7 +355,7 @@ var legends = {
     },
     MIX_ETNIA: {
         title: "Diversidad etnias y razas",
-        subtitle: "Índice de Shanon -  Nivel de diversidad por manzana", 
+        subtitle: "Índice de Shannon-Wienner -  Nivel de diversidad por manzana",
         elem1: '<div><span  style= "color:#1a9641">▉</span>0.25 - 0.50</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>0.15 - 0.24</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>0.09 - 0.14</div>',
@@ -367,7 +367,7 @@ var legends = {
     },
     MIX_EDU: {
         title: "Diversidad nivel educativo",
-        subtitle: "Índice de Shanon -  Nivel de diversidad por manzana", 
+        subtitle: "Índice de Shannon-Wienner -  Nivel de diversidad por manzana",
         elem1: '<div><span  style= "color:#1a9641">▉</span>1.56 - 1.98</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>1.34 - 1.55</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>1.08 - 1.33</div>',
@@ -379,7 +379,7 @@ var legends = {
     },
     MIX_EDAD: {
         title: "Diversidad edades",
-        subtitle: "Índice de Shanon -  Nivel de diversidad por manzana", 
+        subtitle: "Índice de Shannon-Wienner -  Nivel de diversidad por manzana",
         elem1: '<div><span  style= "color:#1a9641">▉</span>1.54 - 1.74</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>1.45 - 1.53</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>1.34 - 1.44</div>',
@@ -391,7 +391,7 @@ var legends = {
     },
     SHANON_ES: {
         title: "Diversidad ingresos",
-        subtitle: "Índice de Shanon -  Nivel de diversidad por manzana", 
+        subtitle: "Índice de Shannon-Wienner -  Nivel de diversidad por manzana",
         elem1: '<div><span  style= "color:#1a9641">▉</span>0.78 - 1.52</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>0.55 - 0.77</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>0.34 - 0.54</div>',
@@ -415,7 +415,7 @@ var legends = {
     },
     P_SALUD: {
         title: "Proximidad centros de salud",
-        subtitle: "Distancia en m x Factor inclinación del terreno", 
+        subtitle: "Distancia en metros con factor de inclinación del terreno",
         elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 500</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>501 - 1000</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>1001 - 1500</div>',
@@ -427,7 +427,7 @@ var legends = {
     },
     P_SALUD1: {
         title: "Proximidad hospitales",
-        subtitle: "Distancia en m x Factor inclinación del terreno", 
+        subtitle: "Distancia en metros con factor de inclinación del terreno",
         elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 1000</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>1001 - 2000</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>2001 - 4000</div>',
@@ -523,7 +523,7 @@ var legends = {
     },
     P_BIB: {
         title: "Proximidad equipamientos culturales",
-        subtitle: "Distancia en m x Factor inclinación del terreno", 
+        subtitle: "Distancia en metros con factor de inclinación del terreno",
         elem1: '<div><span  style= "color:#1a9641">▉</span>46 - 500</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>501 - 1000</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>1001 - 3000</div>',
@@ -535,7 +535,7 @@ var legends = {
     },
     P_EDU: {
         title: "Proximidad equipamientos educativos",
-        subtitle: "Distancia en m x Factor inclinación del terreno", 
+        subtitle: "Distancia en metros con factor de inclinación del terreno",
         elem1: '<div><span  style= "color:#1a9641">▉</span>6 - 200</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>201 - 500</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>501 - 1000</div>',
@@ -582,8 +582,8 @@ var legends = {
         elem8: "Alcaldía de Barranquilla",
     },
     P_COMSER: {
-        title: "Proximidad unidades de servicios y comerciales",
-        subtitle: "Distancia en m x Factor inclinación del terreno",
+        title: "Proximidad zonas de interés económico (servicios y comercio)",
+        subtitle: "Distancia en metros con factor de inclinación del terreno",
         elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 50</div>',
         elem2: '<div><span  style= "color:#a6d96a">▉</span>51 - 200</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>201 - 500</div>',
