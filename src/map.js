@@ -41,7 +41,7 @@ info.update = function (props) {
         'Localidad ' + props.NMB_LC_CM + '<br />' +
         'Viviendas ' + props.V_CON_OCUP + '<br />' +
         'Hogares ' + props.HOG + '<br />' +
-        'Personas ' + props.HA_TOT_PER + '<br />' +  
+        'Personas ' + props.PER + '<br />' +  
         'Población de origen Venezuela ' + props.VEN + '<br />' +  '<br />' + 
 
         '<b>Vivienda </b>' + '<br />' +
@@ -288,7 +288,7 @@ var legends = {
         elem2: '<div><span  style= "color:#a6d96a">▉</span>5 - 11</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>12 - 20</div>',
         elem4: '<div><span  style= "color:#fdae61">▉</span>21 - 38</div>',
-        elem5: '<div><span  style= "color:#d7191c">▉</span>39 - 100</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>39 - 89</div>',
         elem6: '',
         elem7: '',
         elem8: "DANE Censo Nacional Población y Vivienda 2018",
@@ -308,11 +308,11 @@ var legends = {
     T_DESEMP: {
         title: "Tasa de desempleo",
         subtitle: "% de Personas",
-        elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 3</div>',
-        elem2: '<div><span  style= "color:#a6d96a">▉</span>4 - 7</div>', 
-        elem3: '<div><span  style= "color:#f4f466">▉</span>8 - 11</div>',
-        elem4: '<div><span  style= "color:#fdae61">▉</span>12 - 20</div>',
-        elem5: '<div><span  style= "color:#d7191c">▉</span>21 - 57</div>',
+        elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 10</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>11 - 20</div>', 
+        elem3: '<div><span  style= "color:#f4f466">▉</span>21 - 30</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>31 - 50</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>51 - 90</div>',
         elem6: '',
         elem7: '',
         elem8: "DANE Censo Nacional Población y Vivienda 2018",
@@ -600,7 +600,7 @@ var legends = {
         elem2: '<div><span  style= "color:#a6d96a">▉</span>29 - 41</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>42 - 49</div>',
         elem4: '<div><span  style= "color:#fdae61">▉</span>50 - 58</div>',
-        elem5: '<div><span  style= "color:#d7191c">▉</span>59 - 91</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>59 - 93</div>',
         elem6: '',
         elem7: '',
         elem8: "DANE Censo Nacional Población y Vivienda 2018",
@@ -612,7 +612,7 @@ var legends = {
         elem2: '<div><span  style= "color:#a6d96a">▉</span>0.32 - 0.84</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>0.85 - 1.62</div>',
         elem4: '<div><span  style= "color:#fdae61">▉</span>1.63 - 3.14</div>',
-        elem5: '<div><span  style= "color:#d7191c">▉</span>3.15 - 10.29</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>3.15 - 15.11</div>',
         elem6: '',
         elem7: '',
         elem8: "DANE Censo Nacional Población y Vivienda 2018",
@@ -648,7 +648,7 @@ var legends = {
         elem2: '<div><span  style= "color:#a6d96a">▉</span>3 - 8</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>9 - 20</div>',
         elem4: '<div><span  style= "color:#fdae61">▉</span>21 - 46</div>',
-        elem5: '<div><span  style= "color:#d7191c">▉</span>47 - 90</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>47 - 73</div>',
         elem6: '',
         elem7: '',
         elem8: "DANE Censo Nacional Población y Vivienda 2018",
@@ -717,10 +717,10 @@ function setProColor(d) {
                         '#d7191c';
     }
     else if (currentStyle === 'T_DESEMP') {
-        return d > 20 ? '#d7191c' :
-                        d > 11 ? '#fdae61' :
-                            d > 7 ? '#f4f466' :
-                                d > 3 ? '#a6d96a':
+        return d > 50 ? '#d7191c' :
+                        d > 30 ? '#fdae61' :
+                            d > 20 ? '#f4f466' :
+                                d > 10 ? '#a6d96a':
                                 '#1a9641';
     }
     else if (currentStyle === 'PM10') {
