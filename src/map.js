@@ -45,7 +45,7 @@ info.update = function (props) {
         'Población de origen Venezuela ' + props.VEN + '<br />' +  '<br />' + 
 
         '<b>Vivienda </b>' + '<br />' +
-        'Vivienda adecuada: ' + props.VIV_ADE.toFixed(0) + ' %' + '<br />' +
+        'Vivienda adecuada: ' + props.P_MAT_ADE.toFixed(0) + ' %' + '<br />' +
         'Espacio vital suficiente: ' + props.ES_VIT_SUF.toFixed(0) + ' %' + '<br />' +
         'Agua mejorada: ' + props.A_ACU.toFixed(0) + ' %' + '<br />' +
         'Saneamiento: ' + props.A_ALC.toFixed(0) + ' %' + '<br />' +
@@ -75,7 +75,7 @@ info.update = function (props) {
         '<b>Espacios públicos, seguridad y recreación </b>' + '<br />' +
         'Proximidad espacio público: ' + props.P_EP.toFixed(0) + ' m' + '<br />' +
         'M² per capita de espacio público: ' + props.M2_ESP_PU.toFixed(2) + '<br />' +
-        'Densidad residencial: ' + props.D_POB.toFixed(2) + '<br />' +
+        'Densidad residencial: ' + props.D_POB.toFixed(0) + '<br />' +
         'Tasa de hurtos x 100mil habitantes: ' + props.HURTOS.toFixed(1) + '<br />' +
         'Tasa de homicidios x 100mil habitantes: ' + props.HOMICIDIOS.toFixed(1) + '<br />' +
         'Diversidad usos del suelo: ' + props.MIXTICIDAD.toFixed(2) + '/1.61' +'<br />' + '<br />' +
@@ -84,7 +84,6 @@ info.update = function (props) {
         'Proximidad zonas de interés económico (servicios y comercio): ' + props.P_COMSER.toFixed(0) + ' m' + '<br />' +
         'Desempleo: ' + props.T_DESEMP.toFixed(0) + ' %' + '<br />' +
         'Empleo: ' + props.EMPLEO.toFixed(0) + ' %' + '<br />' +
-        'Empleo informal estricto: ' + props.E_INFOR.toFixed(0) + ' %' + '<br />' +
         'Desempleo juvenil: ' + props.DESEM_JUVE.toFixed(0) + ' %' + '<br />' +
         'Brecha género desempleo: ' + props.DESEM_M_H.toFixed(2)  : 'Seleccione una manzana');
 };
@@ -173,42 +172,6 @@ function changeLegend(props) {
 }
 
 var legends = {
-    ZA_SALUD1: {
-        title: "Proximidad equipamientos de salud",
-        subtitle: "Pendiente",
-        elem1: '<div><span  style= "color:#1a9641">▉</span>A nivel</div>',
-        elem2: '<div><span  style= "color:#a6d96a">▉</span>Ligeramente inclinada</div>', 
-        elem3: '<div><span  style= "color:#f4f466">▉</span>Moderadamente inclinada</div>',
-        elem4: '<div><span  style= "color:#d7191c">▉</span>Fuertemente inclinada</div>',
-        elem5: '',
-        elem6: '<div><span  style= "color:#c3bfc2">▉</span>Por fuera de la zona de accesibilidad (> 500 m)</div>',
-        elem7: '',
-        elem8: "DANE, SISPRO",
-    },
-    ZA_EDU1: {
-        title: "Proximidad equipamientos de educación",
-        subtitle: "Pendiente",
-        elem1: '<div><span  style= "color:#1a9641">▉</span>A nivel</div>',
-        elem2: '<div><span  style= "color:#a6d96a">▉</span>Ligeramente inclinada</div>', 
-        elem3: '<div><span  style= "color:#f4f466">▉</span>Moderadamente inclinada</div>',
-        elem4: '<div><span  style= "color:#d7191c">▉</span>Fuertemente inclinada</div>',
-        elem5: '',
-        elem6: '<div><span  style= "color:#c3bfc2">▉</span>Por fuera de la zona de accesibilidad (> 500 m)</div>',
-        elem7: '',
-        elem8: "DANE, Google Maps",
-    },
-    ZA_BIB_MU1: {
-        title: "Proximidad equipamientos culturales",
-        subtitle: "Pendiente",
-        elem1: '<div><span  style= "color:#1a9641">▉</span>A nivel</div>',
-        elem2: '<div><span  style= "color:#a6d96a">▉</span>Ligeramente inclinada</div>', 
-        elem3: '<div><span  style= "color:#f4f466">▉</span>Moderadamente inclinada</div>',
-        elem4: '<div><span  style= "color:#d7191c">▉</span>Fuertemente inclinada</div>',
-        elem5: '',
-        elem6: '<div><span  style= "color:#c3bfc2">▉</span>Por fuera de la zona de accesibilidad (> 500 m)</div>',
-        elem7: '',
-        elem8: "DANE, Google Maps",
-    },
     ESC_ANOS: {
         title: "Años promedio educación",
         subtitle: "Años",
@@ -232,18 +195,6 @@ var legends = {
         elem6: '',
         elem7: '',
         elem8: "Alcalcía de Barranquilla",
-    },
-    ZA_EPUBLI1: {
-        title: "Proximidad espacio público",
-        subtitle: "Pendiente",
-        elem1: '<div><span  style= "color:#1a9641">▉</span>A nivel</div>',
-        elem2: '<div><span  style= "color:#a6d96a">▉</span>Ligeramente inclinada</div>', 
-        elem3: '<div><span  style= "color:#f4f466">▉</span>Moderadamente inclinada</div>',
-        elem4: '<div><span  style= "color:#d7191c">▉</span>Fuertemente inclinada</div>',
-        elem5: '',
-        elem6: '<div><span  style= "color:#c3bfc2">▉</span>Por fuera de la zona de accesibilidad (> 500 m)</div>',
-        elem7: '',
-        elem8: "Plan de Ordenamiento Territorial Cúcuta",
     },
     P_MAT_ADE: {
         title: "Vivienda Adecuada",
@@ -403,12 +354,12 @@ var legends = {
     },
     D_POB: {
         title: "Densidad residencial",
-        subtitle: "Población x m2", 
-        elem1: '<div><span  style= "color:#1a9641">▉</span>0.000 - 0.007</div>',
-        elem2: '<div><span  style= "color:#a6d96a">▉</span>0.008 - 0.014</div>', 
-        elem3: '<div><span  style= "color:#f4f466">▉</span>0.015 - 0.020</div>',
-        elem4: '<div><span  style= "color:#fdae61">▉</span>0.021 - 0.040</div>',
-        elem5: '<div><span  style= "color:#d7191c">▉</span>0.041 - 0.540</div>',
+        subtitle: "Población/ha", 
+        elem1: '<div><span  style= "color:#a6d96a">▉</span>0 - 149</div>',
+        elem2: '<div><span  style= "color:#1a9641">▉</span>150 - 200</div>', 
+        elem3: '<div><span  style= "color:#f4f466">▉</span>201 - 400</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>401 - 500</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>Mayor 501</div>',
         elem6: '',
         elem7: '',
         elem8: "DANE Censo Nacional Población y Vivienda 2018",
@@ -512,11 +463,11 @@ var legends = {
     B_E_VIDA: {
         title: "Brecha género esperanza de vida al nacer",
         subtitle: "Relación esperanza de vida al nacer de mujeres y hombres",
-        elem1: '<div><span  style= "color:#1a9641">▉</span>0.83 - 0.98</div>',
-        elem2: '<div><span  style= "color:#a6d96a">▉</span>0.99 - 1.03</div>', 
-        elem3: '<div><span  style= "color:#f4f466">▉</span>1.04 - 1.07</div>',
-        elem4: '<div><span  style= "color:#fdae61">▉</span>1.08 - 1.17</div>',
-        elem5: '<div><span  style= "color:#d7191c">▉</span>1.18 - 1.85</div>',
+        elem1: '<div><span  style= "color:#d7191c">▉</span>0.83 - 0.98</div>',
+        elem2: '<div><span  style= "color:#1a9641">▉</span>0.99 - 1.03</div>', 
+        elem3: '<div><span  style= "color:#a6d96a">▉</span>1.04 - 1.07</div>',
+        elem4: '<div><span  style= "color:#f4f466">▉</span>1.08 - 1.17</div>',
+        elem5: '<div><span  style= "color:#fdae61">▉</span>1.18 - 1.85</div>',
         elem6: '',
         elem7: '',
         elem8: "DANE Censo Nacional Población y Vivienda 2018",
@@ -548,11 +499,11 @@ var legends = {
     DIF_M_H: {
         title: "Brecha género años promedio educación",
         subtitle: "Relación años promedio educación de mujeres y hombres", 
-        elem1: '<div><span  style= "color:#1a9641">▉</span>0.00 - 1.01</div>',
-        elem2: '<div><span  style= "color:#a6d96a">▉</span>1.02 - 1.30</div>', 
-        elem3: '<div><span  style= "color:#f4f466">▉</span>1.31 - 1.84</div>',
-        elem4: '<div><span  style= "color:#fdae61">▉</span>1.85 - 2.00</div>',
-        elem5: '<div><span  style= "color:#d7191c">▉</span>2.01 - 15.33</div>',
+        elem1: '<div><span  style= "color:#d7191c">▉</span>0.00 - 0.90</div>',
+        elem2: '<div><span  style= "color:#1a9641">▉</span>1.00 - 1.30</div>', 
+        elem3: '<div><span  style= "color:#a6d96a">▉</span>1.31 - 1.84</div>',
+        elem4: '<div><span  style= "color:#f4f466">▉</span>1.85 - 2.00</div>',
+        elem5: '<div><span  style= "color:#fdae61">▉</span>2.01 - 15.33</div>',
         elem6: '',
         elem7: '',
         elem8: "DANE Censo Nacional Población y Vivienda 2018",
@@ -572,10 +523,10 @@ var legends = {
     M2_ESP_PU: {
         title: "M² per capita de espacio público",
         subtitle: "m²/habitante",
-        elem1: '<div><span  style= "color:#1a9641">▉</span>101 - 564</div>',
-        elem2: '<div><span  style= "color:#a6d96a">▉</span>44 - 100</div>', 
-        elem3: '<div><span  style= "color:#f4f466">▉</span>10 - 43</div>',
-        elem4: '<div><span  style= "color:#fdae61">▉</span>4 - 9</div>',
+        elem1: '<div><span  style= "color:#1a9641">▉</span>Mayor 15</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>11 - 15</div>', 
+        elem3: '<div><span  style= "color:#f4f466">▉</span>9 - 10</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>4 - 8</div>',
         elem5: '<div><span  style= "color:#d7191c">▉</span>0 - 3</div>',
         elem6: '',
         elem7: '',
@@ -596,11 +547,11 @@ var legends = {
     EMPLEO: {
         title: "Empleo",
         subtitle: "% Personas",
-        elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 28</div>',
-        elem2: '<div><span  style= "color:#a6d96a">▉</span>29 - 41</div>', 
+        elem1: '<div><span  style= "color:#d7191c">▉</span>0 - 28</div>',
+        elem2: '<div><span  style= "color:#fdae61">▉</span>29 - 41</div>', 
         elem3: '<div><span  style= "color:#f4f466">▉</span>42 - 49</div>',
-        elem4: '<div><span  style= "color:#fdae61">▉</span>50 - 58</div>',
-        elem5: '<div><span  style= "color:#d7191c">▉</span>59 - 93</div>',
+        elem4: '<div><span  style= "color:#a6d96a">▉</span>50 - 58</div>',
+        elem5: '<div><span  style= "color:#1a9641">▉</span>59 - 93</div>',
         elem6: '',
         elem7: '',
         elem8: "DANE Censo Nacional Población y Vivienda 2018",
@@ -608,11 +559,11 @@ var legends = {
     DESEM_M_H: {
         title: "Brecha de género desempleo",
         subtitle: "Relación desempleo de mujeres y hombres",
-        elem1: '<div><span  style= "color:#1a9641">▉</span>0.00 - 0.31</div>',
-        elem2: '<div><span  style= "color:#a6d96a">▉</span>0.32 - 0.84</div>', 
-        elem3: '<div><span  style= "color:#f4f466">▉</span>0.85 - 1.62</div>',
-        elem4: '<div><span  style= "color:#fdae61">▉</span>1.63 - 3.14</div>',
-        elem5: '<div><span  style= "color:#d7191c">▉</span>3.15 - 15.11</div>',
+        elem1: '<div><span  style= "color:#d7191c">▉</span>0.00 - 0.89</div>',
+        elem2: '<div><span  style= "color:#1a9641">▉</span>0.90 - 1.00</div>', 
+        elem3: '<div><span  style= "color:#a6d96a">▉</span>1.01 - 1.62</div>',
+        elem4: '<div><span  style= "color:#f4f466">▉</span>1.63 - 3.14</div>',
+        elem5: '<div><span  style= "color:#fdae61">▉</span>3.15 - 15.11</div>',
         elem6: '',
         elem7: '',
         elem8: "DANE Censo Nacional Población y Vivienda 2018",
@@ -782,11 +733,11 @@ function setProColor(d) {
                     '#d7191c';
     }
     else if (currentStyle === 'D_POB') {
-        return d > 0.040 ? '#d7191c' :
-            d > 0.020 ? '#fdae61' :
-                d > 0.014 ? '#f4f466' :
-                    d > 0.007 ? '#a6d96a' :
-                    '#1a9641';
+        return d > 500 ? '#d7191c' :
+            d > 400? '#fdae61' :
+                d > 200 ? '#f4f466' :
+                    d > 149 ? '#1a9641' :
+                    '#a6d96a';
     }
     else if (currentStyle === 'P_SALUD') {
         return d > 3000 ? '#d7191c' :
@@ -852,11 +803,11 @@ function setProColor(d) {
                     '#d7191c';
     }
     else if (currentStyle === 'B_E_VIDA') {
-        return d > 1.17 ? '#1a9641' :
-            d > 1.07 ? '#a6d96a' :
-                d > 1.03 ? '#f4f466' :
-                    d > 0.98 ? '#fdae61' :
-                    '#d7191c';
+        return d > 1.17 ? '#fdae61' :
+            d > 1.08 ? '#f4f466' :
+                d > 1.03 ? '#a6d96a':
+                    d > 0.98 ? '#1a9641' :
+                    '#d7191c'; 
     }
     else if (currentStyle === 'P_BIB') {
         return d > 5000 ? '#d7191c' :
@@ -873,11 +824,11 @@ function setProColor(d) {
                     '#1a9641';
     }
     else if (currentStyle === 'DIF_M_H') {
-        return d > 2 ? '#d7191c' :
-            d > 1.84 ? '#fdae61' :
-                d > 1.30 ? '#f4f466' :
-                    d > 1.01 ? '#a6d96a' :
-                    '#1a9641';
+        return d > 2 ? '#fdae61' :
+            d > 1.84 ? '#f4f466' :
+                d > 1.30 ? '#a6d96a' :
+                    d > 0.9? '#1a9641' :
+                    '#d7191c';
     }
     else if (currentStyle === 'P_EP') {
         return d > 800 ? '#d7191c' :
@@ -887,9 +838,9 @@ function setProColor(d) {
                     '#1a9641';
     }
     else if (currentStyle === 'M2_ESP_PU') {
-        return d > 100 ? '#1a9641' :
-            d > 43 ? '#a6d96a' :
-                d > 9 ? '#f4f466' :
+        return d > 15 ? '#1a9641' :
+            d > 10 ? '#a6d96a' :
+                d > 8 ? '#f4f466' :
                     d > 3 ? '#fdae61':
                     '#d7191c';
     }
@@ -901,18 +852,18 @@ function setProColor(d) {
                     '#1a9641';
     }
     else if (currentStyle === 'EMPLEO') {
-        return d > 58 ? '#d7191c' :
-            d > 49 ? '#fdae61' :
+        return d > 58 ? '#1a9641' :
+            d > 49 ? '#a6d96a' :
                 d > 41 ? '#f4f466' :
-                    d > 28 ? '#a6d96a' :
-                    '#1a9641';
+                    d > 28 ? '#fdae61' :
+                    '#d7191c';
     }
     else if (currentStyle === 'DESEM_M_H') {
-        return d > 3.14 ? '#d7191c' :
-            d > 1.62 ? '#fdae61' :
-                d > 0.84 ? '#f4f466' :
-                    d > 0.31 ? '#a6d96a' :
-                    '#1a9641';
+        return d > 3.14 ? '#fdae61' :
+            d > 1.62 ? '#f4f466' :
+                d > 1 ? '#a6d96a' :
+                    d > 0.89 ? '#1a9641' :
+                    '#d7191c';
     }
     else if (currentStyle === 'E_INFOR') {
         return d > 46 ? '#d7191c' :
