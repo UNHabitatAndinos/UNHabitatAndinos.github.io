@@ -109,44 +109,16 @@ function highlightFeature(e) {
 
     layer.setStyle({
         weight: 5,
-        color: 'black',
+        color: '#494949',
         dashArray: '',
-        fillColor: false
+        fillOpacity: 0.7,
+        opacity: 0.8
     });
 
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
         layer.bringToFront();
     }
-
     info.update(layer.feature.properties);
-}
-
-var manzanas;
-
-function resetHighlight(e) {
-    manzanas.resetStyle(e.target);
-    info.update();
-}
-
-function zoomToFeature(e) {
-    map.fitBounds(e.target.getBounds());
-}
-
-function onEachFeature(feature, layer) {
-    layer.on({
-        mouseover: highlightFeature,
-        mouseout: resetHighlight,
-        click: zoomToFeature
-    });
-}
-
-function style(feature) {
-    return {
-        weight: 0.6,
-        opacity: 0.5,
-        color: '#ffffff00',
-        fillOpacity: 0,
-    };
 }
 
 
@@ -606,17 +578,31 @@ var legends = {
     },
 }
 
-var indi = L.geoJson(Manzana, {
-    style: legends.D_POB,
-}).addTo(map);
+var indi;
 
-var currentStyle = 'D_POB';
+function resetHighlight(e) {
+    indi.setStyle(fillColor);
+    info.update();
+}
 
-manzanas = L.geoJson(Manzana, {
-    style: style,
+function zoomToFeature(e) {
+    map.fitBounds(e.target.getBounds());
+}
+
+function onEachFeature(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+    });
+}
+
+indi = L.geoJson(Manzana, {
+    style: legends.INDICE_MAR,
     onEachFeature: onEachFeature
 }).addTo(map);
 
+var currentStyle = 'INDICE_MAR';
 
 function setProColor(d) {
     if (currentStyle === 'P_MAT_ADE') {
