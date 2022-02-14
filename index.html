@@ -7,7 +7,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <title>Visor Monitoreo Urbano</title>
+    <title>Visor</title>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
@@ -52,7 +52,14 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            width: 100%;
+            width: 50%;
+        }
+
+        #gra {
+            position: absolute;
+            z-index: 999;
+            left: 50%;
+            float: right;
         }
 
         #legend {
@@ -102,6 +109,10 @@
             font: 10px/12px Segoe UI, Segoe UI, Segoe UI;
 
         }
+        g {
+            font: 14px/12px Segoe UI, Segoe UI, Segoe UI;
+
+        }
 
         .info {
             padding: 5px 10px;
@@ -128,8 +139,7 @@
 <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
-<script src="data/Manzana.js"></script>
-<script src="data/localidad.js"></script>
+<script src="data/depto.js"></script>
 
 <div id="map">
     <div id='legend'>
@@ -140,51 +150,10 @@
         <b>Seleccione indicador:</b>
         <div class="custom-select">
         <select name="layers" onclick= 'changeIndi(this);'>
-            <option id="VEN" value="VEN">Población de origen Venezuela</option>  
-            <optgroup label="Vivienda"></optgroup>
-            <option id="P_MAT_ADE" value="P_MAT_ADE">Vivienda adecuada</option>
-            <option id="ES_VIT_SUF" value="ES_VIT_SUF">Espacio vital suficiente</option>
-            <option id="A_ACU" value="A_ACU">Acceso a agua mejorada</option>
-            <option id="A_ALC" value="A_ALC">Acceso a saneamiento</option>   
-            <option id="A_ELEC" value="A_ELEC">Acceso a electricidad</option> 
-            <option id="A_INTER" value="A_INTER">Acceso a internet</option>
-            <option id="D_ECONO" value="D_ECONO">Dependencia económica</option>
-            <option id="MAX_EST" value="MAX_EST">Estratificación socioeconómica</option>
+            <option id="BEN_MEN" value="BEN_MEN" selected>Beneficiarios mensuales</option>  
+            <optgroup label="Tipo de implementación"></optgroup>
+            <option id="CONJUN" value="CONJUN">Conjunta</option>
             </optgroup>
-            <optgroup label="Salud"></optgroup>
-            <option id="P_SALUD" value="P_SALUD">Proximidad centros salud</option>
-            <option id="P_SALUD1" value="P_SALUD1">Proximidad hospitales</option>
-            <option id="PM10" value="PM10">Concentración de Pm10</option>
-            <option id="CON_SOL" value="CON_SOL">Contaminación de residuos sólidos</option>
-            <option id="E_VIDA" value="E_VIDA">Esperanza de vida al nacer</option>
-            <option id="B_E_VIDA" value="B_E_VIDA">Brecha de género esperanza de vida al nacer</option>
-            </optgroup>
-            <optgroup label="Educación, cultura y diversidad"></optgroup>
-            <option id="P_BIB" value="P_BIB">Proximidad equipamientos culturales</option>
-            <option id="P_EDU" value="P_EDU">Proximidad equipamientos educativos</option>
-            <option id="SHANON_ES" value="SHANON_ES">Diversidad ingresos</option> 
-            <option id="MIX_EDU" value="MIX_EDU">Diversidad nivel educativo</option> 
-            <option id="MIX_EDAD" value="MIX_EDAD">Diversidad edades</option> 
-            <option id="MIX_ETNIA" value="MIX_ETNIA">Diversidad etnias y razas</option> 
-            <option id="DIF_M_H" value="DIF_M_H">Brecha de género años promedio educación</option>
-            <option id="ESC_ANOS" value="ESC_ANOS">Años promedio educación</option>
-            </optgroup>
-            <optgroup label="Espacios públicos, seguridad, recreación"></optgroup>
-            <option id="P_EP" value="P_EP">Proximidad espacio público</option>  
-            <option id="M2_ESP_PU" value="M2_ESP_PU">M² per capita de espacio público</option> 
-            <option id="D_POB" value="D_POB" selected>Densidad residencial</option>
-            <option id="HURTOS" value="HURTOS">Tasa de hurtos</option>
-            <option id="HOMICIDIOS" value="HOMICIDIOS">Tasa de homicidios</option>
-            <option id="MIXTICIDAD" value="MIXTICIDAD">Diversidad usos del suelo</option>
-            </optgroup>
-            <optgroup label="Oportunidades económicas"></optgroup>
-            <option id="P_COMSER" value="P_COMSER">Proximidad zonas de interés económico (servicios y comercio)</option>
-            <option id="T_DESEMP" value="T_DESEMP">Tasa de desempleo</option>
-            <option id="EMPLEO" value="EMPLEO">Empleo</option>
-            <option id="E_INFOR" value="E_INFOR">Empleo informal estricto</option>
-            <option id="DESEM_JUVE" value="DESEM_JUVE">Desempleo juvenil</option>   
-            <option id="DESEM_M_H" value="DESEM_M_H">Brecha de género desempleo</option>
-            </optgroup>          
         </select>
     </div>
     </div>
@@ -198,6 +167,24 @@
     </div>
 
 </div>
+<div id='gra'>
+    <g>
+        Situación:
+        En 2019, Colombia continuó siendo el país más impactado
+por la llegada de refugiados y migrantes desde Venezuela,
+concentrando la mayor parte de personas con intención de
+quedarse (1,4 M), 676.093 de ellas con estatus regular, y en
+tránsito (casi 500.000 personas) y movimientos pendulares
+en la región (cerca de 4,2 M de TMF emitidos). Además,
+más de medio millón de colombianos regresaron de
+Venezuela a mediados de 2019.
+    </g>
+    <iframe  width="750"
+    height="650"
+     src='grafica.html'></iframe>
+
+</div>
+  
 
 
 </body>
