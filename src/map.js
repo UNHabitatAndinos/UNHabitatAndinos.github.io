@@ -576,6 +576,18 @@ var legends = {
         elem7: '',
         elem8: "DANE Censo Nacional Población y Vivienda 2018",
     },
+    E_INFOR_E: {
+        title: "Empleo informal estricto",
+        subtitle: "% Personas",
+        elem1: '<div><span  style= "color:#1a9641">▉</span>0 - 2</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>3 - 8</div>', 
+        elem3: '<div><span  style= "color:#f4f466">▉</span>9 - 20</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>21 - 46</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>47 - 73</div>',
+        elem6: '',
+        elem7: '',
+        elem8: "DANE Censo Nacional Población y Vivienda 2018",
+    },
 }
 
 var indi;
