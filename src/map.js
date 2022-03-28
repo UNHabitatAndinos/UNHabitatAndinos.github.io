@@ -81,10 +81,10 @@ function stylec(feature) {
     };
 }
 
-var loc = L.geoJson(localidad, {
+/*var loc = L.geoJson(localidad, {
     style: stylec,
     onEachFeature: popupText,
-}).addTo(map);
+}).addTo(map);*/
 
 function highlightFeature(e) {
     var layer = e.target;
