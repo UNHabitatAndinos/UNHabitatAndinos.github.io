@@ -1,6 +1,6 @@
 // Create variable to hold map element, give initial settings to map
 var map = L.map('map', {
-    center: [14.90, -92.26],
+    center: [10.53, -61.41],
     zoom: 13,
     minZoom: 13,
     scrollWheelZoom: false,
@@ -9,7 +9,7 @@ var map = L.map('map', {
 map.once('focus', function() { map.scrollWheelZoom.enable(); });
 
 L.easyButton('<img src="images/fullscreen.png">', function (btn, map) {
-    var cucu = [14.90, -92.26];
+    var cucu = [10.53, -61.41];
     map.setView(cucu, 13);
 }).addTo(map);
 
@@ -18,7 +18,7 @@ var esriAerialUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services' +
     '/World_Imagery/MapServer/tile/{z}/{y}/{x}';
 var esriAerialAttrib = 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, ' +
     'USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the' +
-    ' GIS User Community';
+    'GIS User Community';
 var esriAerial = new L.TileLayer(esriAerialUrl,
     {maxZoom: 18, attribution: esriAerialAttrib}).addTo(map);
 
@@ -39,35 +39,29 @@ info.onAdd = function (map) {
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
     this._div.innerHTML = (props ?
-        'Viviendas ' + props.V_CON_OCUP + '<br />' +
-        'Hogares ' + props.HOG + '<br />' +
-        'Personas ' + props.POB + '<br />' +  '<br />' + 
+        'Comunidad ' + props.COMM_NAME + '<br />' + 
+        'Personas ' + props.P_TOTAL.toFixed(0) + '<br />' + 
+        'Hogares ' + props.NO_DWELL + '<br />' +  '<br />' + 
 
-        '<b>Marcador de Inclusión Urbana '  + props.INDICE_MAR.toFixed(0)  + ' %' + '</b>'+ '<br />' + '<br />' + 
+        '<b>Vivienda </b>' + '<br />' +
+        'Necesidades básicas insatisfechas - Vivienda: ' + props.NBI_VIV_D + '<br />' +
+        'Hogares en hacinamiento: ' + props.V_HACINA_D + '<br />' +
+        'Necesidades básicas insatisfechas - Agua: ' + props.NBI_AGUA_D + '<br />' +
+        'Necesidades básicas insatisfechas - Saneamiento: ' + props.NBI_SAN_D + '<br />' +
+        'Necesidades básicas insatisfechas - Electricidad: ' + props.NBI_ELEC_D + '<br />' +
+        'Acceso a internet: ' + props.A_INTER.toFixed(0) + ' %' + '<br />' +  '<br />' +  
 
-        '<b>Vivienda asequible, de calidad y con servicios '  + props.VIV.toFixed(0)  + ' %' + '</b>'+ '<br />' +
-        'Calidad estructural y cualitativa de la vivienda: ' + props.V_CAL.toFixed(0) + ' %' + '<br />' +
-        'Acceso a servicios básicos e internet: ' + props.V_SER.toFixed(0) + ' %' + '<br />' +
-        'Asequibilidad: </b> ' + props.V_ASE.toFixed(0)  + ' %' +  '<br />' +  '<br />' +  
-
-        '<b>Salud y bienestar ' + props.SAL.toFixed(0)  + ' %'  + '</b>'+ '<br />' +
-        'Proximidad a centros de salud: ' + props.S_PRO.toFixed(0) + ' %' + '<br />' +
-        'Exposición factores ambientales: ' + props.S_AMB.toFixed(0) + ' %' + '<br />' +
-        'Esperanza de vida (considerando brecha de género): '  + props.S_BIE.toFixed(0)  + ' %' +  '<br />' +  '<br />' +  
-
-        '<b>Educación, cultura y diversidad ' + props.EDU.toFixed(0)  + ' %'  + '</b>'+  '<br />' +
-        'Proximidad centros educativos: ' + props.E_PRO.toFixed(0) + ' %' + '<br />' +
-        'Diversidad socioeconómica: ' + props.E_DIV.toFixed(0) + ' %' + '<br />' +
-        'Nivel educativo (considerando brecha de género): '  + props.E_BIE.toFixed(0)  + ' %' +  '<br />' +  '<br />' +  
+        '<b>Salud</b>' + '<br />' +
+        'Proximidad centros de salud: ' + props.D_SALUD.toFixed(0) + ' m' + '<br />' +  
+        'Necesidades básicas insatisfechas - Recolección de residuos sólidos: ' + props.NBI_RECB_D + '<br />' +  '<br />' +    
         
-        '<b>Espacio público y seguridad ' + props.EPUB.toFixed(0)  + ' %'  + '</b>'+ '<br />' +
-        'Proximidad a espacios públicos: ' + props.EP_PRO.toFixed(0) + ' %' + '<br />' +
-        'Vitalidad ambiente urbano: ' + props.EP_VIT.toFixed(0) + ' %' + '<br />' +
-        'Seguridad y protección: '  + props.EP_SEG.toFixed(0)  + ' %' +  '<br />' +  '<br />' +  
+        '<b>Educación, cultura y diversidad </b>' + '<br />' +
+        'Proximidad equipamientos educativos: ' + props.D_EDU.toFixed(0) + ' m' + '<br />' +  '<br />' +  
 
-        '<b>Oportunidades económicas ' + props.OPO.toFixed(0)  + ' %'  + '</b>'+  '<br />' +
-        'Proximidad a comercio y servicios: ' + props.O_PRO.toFixed(0) + ' %' + '<br />' +
-        'Acceso a oportunidades para el bienestar: '  + props.O_BIE.toFixed(0) + ' %'   : 'Seleccione una manzana');
+        '<b>Oportunidades económicas </b>' + '<br />' +
+        'Proximidad zonas de interés económico (servicios y comercio): ' + props.D_SER.toFixed(0) + ' m' + '<br />' +
+        'Población desempleada (en búsqueda de trabajo): ' + props.DESOCU_D + '<br />' +
+        'Población ocupada: ' + props.OCU.toFixed(0) + ' %'  : 'Seleccione una manzana');
 };
 info.addTo(map);
 
@@ -81,10 +75,10 @@ function stylec(feature) {
     };
 }
 
-/*var loc = L.geoJson(localidad, {
+var loc = L.geoJson(localidad, {
     style: stylec,
     onEachFeature: popupText,
-}).addTo(map);*/
+}).addTo(map);
 
 function highlightFeature(e) {
     var layer = e.target;
@@ -125,17 +119,137 @@ function changeLegend(props) {
 }
 
 var legends = {
-    INDICE_MAR: {
-        title: "Marcador de Inclusión Urbana",
+    NBI_VIV: {
+        title: "Necesidades básicas insatisfechas - Vivienda",
         subtitle: "%", 
-        elem1: '<div><span  style= "color:#FCF9BB">▉</span>73 - 78</div>',
-        elem2: '<div><span  style= "color:#FE9D6C">▉</span>70 - 72</div>', 
-        elem3: '<div><span  style= "color:#CA3E72">▉</span>65 - 69</div>',
-        elem4: '<div><span  style= "color:#862781">▉</span>60 - 64</div>',
-        elem5: '<div><span  style= "color:#2A115C">▉</span>38 - 59</div>',
+        elem1: '<div><span  style= "color:#1a9641">▉</span>1.14 - 1.56</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>1.57 - 4.87</div>',
+        elem3: '<div><span  style= "color:#f4f466">▉</span>4.88 - 6.79</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>6.80 - 9.34</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>9.35 - 11.88</div>',
+        elem6: '<div><span  style= "color:#c3bfc2">▉</span>Sin información</div>',
+        elem7: '',
+        elem8: "CSO Censo Población y Vivienda 2011",
+    },
+    V_HACINA: {
+        title: "Hogares en hacinamiento",
+        subtitle: "(más de 3 personas por dormitorio) %", 
+        elem1: '<div><span  style= "color:#1a9641">▉</span>0.62 - 1.23</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>1.24 - 5.79</div>',
+        elem3: '<div><span  style= "color:#f4f466">▉</span>5.80 - 7.44</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>7.45 - 9.50</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>9.51 - 13.04</div>',
+        elem6: '<div><span  style= "color:#c3bfc2">▉</span>Sin información</div>',
+        elem7: '',
+        elem8: "CSO Censo Población y Vivienda 2011",
+    },
+    NBI_AGUA: {
+        title: "Necesidades básicas insatisfechas - Agua",
+        subtitle: "%", 
+        elem1: '<div><span  style= "color:#1a9641">▉</span>0.00 - 0.33</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>0.34 - 1.32</div>',
+        elem3: '<div><span  style= "color:#c3bfc2">▉</span>Sin información</div>',
+        elem4: '',
+        elem5: '',
         elem6: '',
         elem7: '',
-        elem8: "ONU-Habitat 2020 - Elaboración propia",
+        elem8: "CSO Censo Población y Vivienda 2011",
+    },
+    NBI_SAN: {
+        title: "Necesidades básicas insatisfechas - Saneamiento",
+        subtitle: "%", 
+        elem1: '<div><span  style= "color:#1a9641">▉</span>0.55 - 1.64</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>1.65 - 3.13</div>',
+        elem3: '<div><span  style= "color:#f4f466">▉</span>3.14 - 8.44</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>8.45 - 12.35</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>12.36 - 19.71</div>',
+        elem6: '<div><span  style= "color:#c3bfc2">▉</span>Sin información</div>',
+        elem7: '',
+        elem8: "CSO Censo Población y Vivienda 2011",
+    },
+    NBI_ELEC: {
+        title: "Necesidades básicas insatisfechas - Electricidad",
+        subtitle: "%", 
+        elem1: '<div><span  style= "color:#1a9641">▉</span>0.00 - 0.43</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>0.44 - 1.38</div>',
+        elem3: '<div><span  style= "color:#c3bfc2">▉</span>Sin información</div>',
+        elem4: '',
+        elem5: '',
+        elem6: '',
+        elem7: '',
+        elem8: "CSO Censo Población y Vivienda 2011",
+    },
+    A_INTER: {
+        title: "Acceso a internet",
+        subtitle: "%", 
+        elem1: '<div><span  style= "color:#1a9641">▉</span>65.50 - 87.27</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>56.48 - 65.49</div>',
+        elem3: '<div><span  style= "color:#f4f466">▉</span>49.45 - 56.47</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>41.76 - 49.44</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>49.04 - 41.75</div>',
+        elem6: '',
+        elem7: '',
+        elem8: "CSO Censo Población y Vivienda 2011",
+    },
+    D_EDU: {
+        title: "Proximidad equipamientos educativos",
+        subtitle: "m", 
+        elem1: '<div><span  style= "color:#1a9641">▉</span>9 - 500</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>502 - 1000</div>',
+        elem3: '<div><span  style= "color:#f4f466">▉</span>1002 - 2000</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>2003 - 3000</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>3000 - 3937</div>',
+        elem6: '',
+        elem7: '',
+        elem8: "CSO Censo Población y Vivienda 2011",
+    },
+    D_SER: {
+        title: "Proximidad zonas de interés económico (servicios y comercio)",
+        subtitle: "m", 
+        elem1: '<div><span  style= "color:#1a9641">▉</span>40 - 500</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>502 - 1000</div>',
+        elem3: '<div><span  style= "color:#f4f466">▉</span>1002 - 2000</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>2003 - 3000</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>3000 - 4897</div>',
+        elem6: '',
+        elem7: '',
+        elem8: "CSO Censo Población y Vivienda 2011",
+    },
+    DESOCU: {
+        title: "Población desempleada (en búsqueda de trabajo)",
+        subtitle: "%", 
+        elem1: '<div><span  style= "color:#1a9641">▉</span>0.80 - 1.12</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>1.13 - 1.94</div>',
+        elem3: '<div><span  style= "color:#f4f466">▉</span>2.26 - 2.56</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>2.57 - 3.46</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>3.47 - 4.18</div>',
+        elem6: '<div><span  style= "color:#c3bfc2">▉</span>Sin información</div>',
+        elem7: '',
+        elem8: "CSO Censo Población y Vivienda 2011",
+    },
+    OCU: {
+        title: "Población ocupada",
+        subtitle: "%", 
+        elem1: '<div><span  style= "color:#1a9641">▉</span>60.65 - 69.12</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>58.21 - 60.64</div>',
+        elem3: '<div><span  style= "color:#f4f466">▉</span>56.02 - 58.20</div>',
+        elem4: '<div><span  style= "color:#fdae61">▉</span>49.22 - 56.01</div>',
+        elem5: '<div><span  style= "color:#d7191c">▉</span>47.22 - 49.21</div>',
+        elem6: '',
+        elem7: '',
+        elem8: "CSO Censo Población y Vivienda 2011",
+    },
+    NBI_REC_BA: {
+        title: "Necesidades básicas insatisfechas - Recolección de residuos sólidos",
+        subtitle: "%", 
+        elem1: '<div><span  style= "color:#1a9641">▉</span>0.00 - 1.10</div>',
+        elem2: '<div><span  style= "color:#a6d96a">▉</span>1.11 - 3.26</div>',
+        elem3: '<div><span  style= "color:#f4f466">▉</span>3.27 - 5.91</div>',
+        elem4: '<div><span  style= "color:#c3bfc2">▉</span>Sin información</div>',
+        elem5: '',
+        elem6: '',
+        elem7: '',
+        elem8: "CSO Censo Población y Vivienda 2011",
     },
 }
 
@@ -159,26 +273,88 @@ function onEachFeature(feature, layer) {
 }
 
 indi = L.geoJson(Manzana, {
-    style: legends.INDICE_MAR,
+    style: legends.NBI_VIV,
     onEachFeature: onEachFeature
 }).addTo(map);
 
-var currentStyle = 'INDICE_MAR';
+var currentStyle = 'NBI_VIV';
 
 
 function setProColor(d) {
-    if (currentStyle === 'INDICE_MAR') {
-        return d > 72 ? '#FCF9BB' :
-            d > 69 ? '#FE9D6C' :
-                d > 64 ? '#CA3E72' :
-                    d > 59 ? '#862781' :
-                    '#2A115C';
+    if (currentStyle === 'NBI_VIV') {
+        return d > 11.88 ? '#c3bfc2' :
+        d > 9.34 ? '#d7191c' :
+            d > 6.79 ? '#fdae61' :
+                d > 4.87 ? '#f4f466' :
+                    d > 1.56 ? '#a6d96a' :
+                        '#1a9641';
+    }
+    if (currentStyle === 'V_HACINA') {
+        return d > 13.04 ? '#c3bfc2' :
+        d > 9.50 ? '#d7191c' :
+            d > 7.44 ? '#fdae61' :
+                d > 5.79 ? '#f4f466' :
+                    d > 1.23 ? '#a6d96a' :
+                        '#1a9641';
+    }
+    if (currentStyle === 'NBI_AGUA') {
+        return d > 1.32 ? '#c3bfc2' :
+        d > 0.33 ? '#a6d96a' :
+        '#1a9641';
+    }
+    if (currentStyle === 'NBI_SAN') {
+        return d > 19.71 ? '#c3bfc2' :
+        d > 12.35 ? '#d7191c' :
+            d > 8.44 ? '#fdae61' :
+                d > 3.13 ? '#f4f466' :
+                    d > 1.64 ? '#a6d96a' :
+                        '#1a9641';
+    }
+    if (currentStyle === 'NBI_ELEC') {
+        return d > 1.38 ? '#c3bfc2' :
+        d > 0.43? '#a6d96a' :
+        '#1a9641';
+    }
+    if (currentStyle === 'NBI_REC_BA') {
+        return d > 5.91 ? '#c3bfc2' :
+            d > 3.26 ? '#f4f466' :
+                d > 1.10? '#a6d96a' :
+                    '#1a9641';
+    }
+    if (currentStyle === 'A_INTER') {
+        return d > 65.49 ? '#1a9641' :
+            d > 56.47 ? '#a6d96a' :
+                d > 49.44? '#f4f466' :
+                    d > 41.75 ? '#fdae61' :
+                        '#d7191c';
+    }
+    if (currentStyle === 'D_EDU') {
+        return d > 3000 ? '#d7191c' :
+            d > 2000 ? '#fdae61' :
+                d > 1000 ? '#f4f466' :
+                    d > 500 ? '#a6d96a' :
+                        '#1a9641';
+    }
+    if (currentStyle === 'DESOCU') {
+        return d > 4.18 ? '#c3bfc2' :
+        d > 3.46 ? '#d7191c' :
+            d > 2.56 ? '#fdae61' :
+                d > 1.94 ? '#f4f466' :
+                    d > 1.12 ? '#a6d96a' :
+                        '#1a9641';
+    }
+    if (currentStyle === 'OCU') {
+        return d > 60.64 ? '#1a9641' :
+            d > 58.20 ? '#a6d96a' :
+                d > 56.01 ? '#f4f466' :
+                    d > 49.21 ? '#fdae61' :
+                        '#d7191c';
     }
     else {
-        return d > 4 ? '#d7191c' :
-            d > 3 ? '#fdae61' :
-                d > 2 ? '#f4f466' :
-                    d > 1 ? '#a6d96a' :
+        return d > 3000 ? '#d7191c' :
+            d > 2000 ? '#fdae61' :
+                d > 1000 ? '#f4f466' :
+                    d > 500 ? '#a6d96a' :
                         '#1a9641';
     }
 
@@ -221,8 +397,8 @@ var layersControl = new L.Control.Layers(baseMaps, overlayMaps, {
     collapsed: true,
 });
 map.addControl(layersControl);
-changeIndi({value: 'INDICE_MAR'});
+changeIndi({value: 'NBI_VIV'});
 
 function popupText(feature, layer) {
-    layer.bindPopup('Localidad ' + feature.properties.LOCALIDAD + '<br />')
+    layer.bindPopup('Comunidad ' + feature.properties.COMM_NAME + '<br />')
 }

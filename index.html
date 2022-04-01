@@ -134,8 +134,36 @@
 <div id="map">
     <div id='legend'>
     </div>
-   
     <script src='src/map.js'></script>
+
+    
+    <div class="container">
+        <b>Seleccione indicador:</b>
+        <div class="custom-select">
+        <select name="layers" onclick= 'changeIndi(this);'>
+            <optgroup label="Vivienda"></optgroup>
+            <option id="NBI_VIV" value="NBI_VIV" selected>Necesidades básicas insatisfechas - Vivienda</option>
+            <option id="V_HACINA" value="V_HACINA">Hogares en hacinamiento</option>
+            <option id="NBI_AGUA" value="NBI_AGUA">Necesidades básicas insatisfechas - Agua</option>
+            <option id="NBI_SAN" value="NBI_SAN">Necesidades básicas insatisfechas - Saneamiento</option>   
+            <option id="NBI_ELEC" value="NBI_ELEC">Necesidades básicas insatisfechas - Electricidad</option> 
+            <option id="A_INTER" value="A_INTER">Acceso a internet</option>
+            </optgroup>
+            <optgroup label="Salud"></optgroup>
+            <option id="D_SALUD" value="D_SALUD">Proximidad centros salud</option>
+            <option id="NBI_REC_BA" value="NBI_REC_BA">Necesidades básicas insatisfechas - Recolección de residuos sólidos</option>
+            </optgroup>
+            <optgroup label="Educación, cultura y diversidad"></optgroup>
+            <option id="D_EDU" value="D_EDU">Proximidad equipamientos educativos</option>
+            </optgroup>
+            <optgroup label="Oportunidades económicas"></optgroup>
+            <option id="D_SER" value="D_SER">Proximidad zonas de interés económico (servicios y comercio)</option>
+            <option id="DESOCU" value="DESOCU">Población desempleada (en búsqueda de trabajo)</option>
+            <option id="OCU" value="OCU">Población ocupada</option>
+            </optgroup>          
+        </select>
+    </div>
+    </div>
     <div id="logoContainer">
         <img src="images/logo1.png" width="100%">
     </div>
